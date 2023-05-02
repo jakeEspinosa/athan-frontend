@@ -14,10 +14,10 @@ interface Props {
 const TextInput = ({ placeholder, label, helperText }: Props) => {
   return (
     <>
-      <FormControl isRequired mb={5}>
+      <FormControl isRequired>
         <FormLabel>{label}</FormLabel>
         <Input placeholder={placeholder} />
-        <FormHelperText>{helperText}</FormHelperText>
+        <FormHelperText mb={5}>{helperText}</FormHelperText>
       </FormControl>
     </>
   );

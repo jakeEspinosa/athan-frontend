@@ -1,4 +1,5 @@
 import TextInput from "./TextInput";
+import { VStack } from "@chakra-ui/react";
 
 const inputFields = [
   {
@@ -21,13 +22,15 @@ const inputFields = [
 const MainForm = () => {
   return (
     <>
-      {inputFields.map((field) => (
-        <TextInput
-          placeholder={field.placeholder}
-          label={field.label}
-          helperText={field.helperText}
-        />
-      ))}
+      <VStack paddingX="15%" width="full" paddingTop="5%">
+        {inputFields.map((field) => (
+          <TextInput
+            placeholder={field.placeholder}
+            label={field.label}
+            helperText={field.helperText}
+          />
+        ))}
+      </VStack>
     </>
   );
 };

@@ -13,7 +13,7 @@ interface Props {
 
 const DropDown = ({ label, placeholder, options }: Props) => {
   return (
-    <FormControl>
+    <FormControl isRequired>
       <FormLabel>{label}</FormLabel>
       <Select placeholder={placeholder}>
         {options.map((o) => (

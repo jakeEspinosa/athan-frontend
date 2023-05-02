@@ -1,4 +1,4 @@
-import { Radio, RadioGroup, Stack } from "@chakra-ui/react";
+import { FormControl, Radio, RadioGroup, Stack } from "@chakra-ui/react";
 
 interface RadioOptions {
   value: string;
@@ -11,13 +11,15 @@ interface Props {
 
 const RadioButton = ({ options }: Props) => {
   return (
-    <RadioGroup>
-      <Stack direction="row">
-        {options.map((option) => (
-          <Radio value={option.value}>{option.label}</Radio>
-        ))}
-      </Stack>
-    </RadioGroup>
+    <FormControl isRequired>
+      <RadioGroup>
+        <Stack direction="row">
+          {options.map((option) => (
+            <Radio value={option.value}>{option.label}</Radio>
+          ))}
+        </Stack>
+      </RadioGroup>
+    </FormControl>
   );
 };
 

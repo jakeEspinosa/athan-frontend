@@ -1,8 +1,11 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack, Link, Text } from "@chakra-ui/react";
 
 const NavBar = () => {
   return (
-    <HStack>
+    <HStack justifyContent="space-between">
+      <Link href="https://github.com/jakeEspinosa/athan.py" isExternal>
+        Go to GitHub Code
+      </Link>
       <Text>Athan.py API String Generator</Text>
     </HStack>
   );

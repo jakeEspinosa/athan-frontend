@@ -15,7 +15,7 @@ const DropDown = ({ label, placeholder, options }: Props) => {
   return (
     <FormControl isRequired>
       <FormLabel>{label}</FormLabel>
-      <Select placeholder={placeholder}>
+      <Select mb={5} placeholder={placeholder}>
         {options.map((o) => (
           <option value={o.value}>{o.option}</option>
         ))}

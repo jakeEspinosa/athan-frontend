@@ -7,7 +7,7 @@ import inputFields from "../../data/InputFields";
 const MainForm = () => {
   return (
     <>
-      <VStack paddingX="15%" width="full" paddingTop="5%">
+      <VStack paddingX="25%" width="full" paddingTop="5%">
         {inputFields.map((field) => (
           <TextInput
             placeholder={field.placeholder}
@@ -17,7 +17,7 @@ const MainForm = () => {
         ))}
 
         <DropDown
-          placeholder="Islamic Society of North America"
+          placeholder="Select a calculation method"
           label="Calculation Method"
           options={dropDownOptions}
         />

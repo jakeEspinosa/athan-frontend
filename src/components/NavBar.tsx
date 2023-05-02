@@ -1,4 +1,5 @@
 import { HStack, Link, Text } from "@chakra-ui/react";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 const NavBar = () => {
   return (
@@ -7,6 +8,7 @@ const NavBar = () => {
         Go to GitHub Code
       </Link>
       <Text>Athan.py API String Generator</Text>
+      <ColorModeSwitch />
     </HStack>
   );
 };

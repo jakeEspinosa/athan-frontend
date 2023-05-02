@@ -3,6 +3,8 @@ import TextInput from "./TextInput";
 import { VStack } from "@chakra-ui/react";
 import dropDownOptions from "../../data/CalculationMethods";
 import inputFields from "../../data/InputFields";
+import schoolOptions from "../../data/SchoolOptions";
+import RadioButton from "./RadioButton";
 
 const MainForm = () => {
   return (
@@ -21,6 +23,7 @@ const MainForm = () => {
           label="Calculation Method"
           options={dropDownOptions}
         />
+        <RadioButton options={schoolOptions} />
       </VStack>
     </>
   );

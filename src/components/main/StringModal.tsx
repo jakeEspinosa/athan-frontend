@@ -10,22 +10,33 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-const StringModal = () => {
+interface BodyText {
+  city: string;
+  country: string;
+  state: string;
+  method: string;
+  school: string;
+}
+
+interface Props {
+  bodyText: BodyText;
+}
+
+const StringModal = ({ bodyText }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const calculateString = () => {
-    console.log("test");
+  const displayString = () => {
     onOpen();
   };
 
   return (
     <>
-      <Button onClick={calculateString}>Generate</Button>
+      <Button onClick={displayString}>Generate</Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Athan API String</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{"test"}</ModalBody>
+          <ModalBody>{JSON.stringify(bodyText)}</ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

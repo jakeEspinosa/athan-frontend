@@ -22,10 +22,12 @@ const RadioButton = ({ options, label }: Props) => {
     <FormControl isRequired>
       <VStack>
         <FormLabel>{label}</FormLabel>
-        <HStack justifyContent="center">
+        <HStack width="100%" justify="center">
           <RadioGroup>
             {options.map((option) => (
-              <Radio value={option.value}>{option.label}</Radio>
+              <Radio margin="9.5px" value={option.value}>
+                {option.label}
+              </Radio>
             ))}
           </RadioGroup>
         </HStack>

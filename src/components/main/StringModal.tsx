@@ -28,6 +28,12 @@ const StringModal = ({ bodyText }: Props) => {
     onOpen();
   };
 
+  const fixText = (bodyText: BodyText) => {
+    let text = JSON.stringify(bodyText).replace(/[{}]/g, "");
+    text = text.replace(/["]/g, "'");
+    return text;
+  };
+
   return (
     <>
       <Button onClick={displayString}>Generate</Button>
@@ -36,7 +42,7 @@ const StringModal = ({ bodyText }: Props) => {
         <ModalContent>
           <ModalHeader>Athan API String</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{JSON.stringify(bodyText).replace(/[{}]/g, "")}</ModalBody>
+          <ModalBody>{fixText(bodyText)}</ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

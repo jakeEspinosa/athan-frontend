@@ -6,6 +6,7 @@ import inputFields from "../../data/InputFields";
 import schoolOptions from "../../data/SchoolOptions";
 import RadioButton from "./RadioButton";
 import CustomButton from "./CustomButton";
+import StringModal from "./StringModal";
 
 const MainForm = () => {
   return (
@@ -28,7 +29,7 @@ const MainForm = () => {
           <RadioButton label="Asr Calculation" options={schoolOptions} />
         </HStack>
 
-        <CustomButton type="submit" text="Generate" />
+        <StringModal />
       </VStack>
     </>
   );

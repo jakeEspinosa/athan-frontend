@@ -9,18 +9,21 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
 
 const StringModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const calculateString = () => {
+    console.log("test");
+    onOpen();
+  };
+
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
-
+      <Button onClick={calculateString}>Generate</Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>Athan API String</ModalHeader>
           <ModalCloseButton />
           <ModalBody>{"test"}</ModalBody>
 

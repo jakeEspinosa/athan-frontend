@@ -36,7 +36,7 @@ const StringModal = ({ bodyText }: Props) => {
         <ModalContent>
           <ModalHeader>Athan API String</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>{JSON.stringify(bodyText)}</ModalBody>
+          <ModalBody>{JSON.stringify(bodyText).replace(/[{}]/g, "")}</ModalBody>
 
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>

@@ -25,7 +25,7 @@ const MainForm = () => {
             label="Calculation Method"
             options={dropDownOptions}
           />
-          <RadioButton options={schoolOptions} />
+          <RadioButton label="Asr Calculation" options={schoolOptions} />
         </HStack>
 
         <CustomButton type="submit" text="Generate" />

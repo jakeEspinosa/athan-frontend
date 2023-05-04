@@ -5,7 +5,6 @@ import dropDownOptions from "../../data/CalculationMethods";
 import inputFields from "../../data/InputFields";
 import schoolOptions from "../../data/SchoolOptions";
 import RadioButton from "./RadioButton";
-import CustomButton from "./CustomButton";
 import StringModal from "./StringModal";
 
 const MainForm = () => {

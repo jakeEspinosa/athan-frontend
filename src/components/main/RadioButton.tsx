@@ -13,7 +13,7 @@ const RadioButton = ({ options }: Props) => {
   return (
     <FormControl isRequired>
       <RadioGroup>
-        <Stack direction="row">
+        <Stack direction="row" justifyContent="center">
           {options.map((option) => (
             <Radio value={option.value}>{option.label}</Radio>
           ))}

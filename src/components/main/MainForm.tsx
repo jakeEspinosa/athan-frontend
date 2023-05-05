@@ -22,6 +22,11 @@ const MainForm = () => {
     setData({ ...data, [event.target.id]: value });
   };
 
+  const handleRadioSelect = (event: any) => {
+    const option = event.target.value;
+    setData({ ...data, ["school"]: option });
+  };
+
   return (
     <>
       <form>
@@ -41,7 +46,11 @@ const MainForm = () => {
               label="Calculation Method"
               options={dropDownOptions}
             />
-            <RadioButton label="Asr Calculation" options={schoolOptions} />
+            <RadioButton
+              onChange={handleRadioSelect}
+              label="Asr Calculation"
+              options={schoolOptions}
+            />
           </HStack>
 
           <StringModal bodyText={data} />

@@ -15,9 +15,10 @@ interface RadioOptions {
 interface Props {
   options: RadioOptions[];
   label: string;
+  onChange?: (event: any) => void;
 }
 
-const RadioButton = ({ options, label }: Props) => {
+const RadioButton = ({ options, label, onChange }: Props) => {
   return (
     <FormControl isRequired>
       <VStack>
@@ -25,7 +26,7 @@ const RadioButton = ({ options, label }: Props) => {
         <HStack width="100%" justify="center">
           <RadioGroup>
             {options.map((option) => (
-              <Radio margin="9.5px" value={option.value}>
+              <Radio margin="9.5px" value={option.value} onChange={onChange}>
                 {option.label}
               </Radio>
             ))}

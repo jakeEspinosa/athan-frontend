@@ -15,6 +15,7 @@ const MainForm = () => {
     state: "",
     method: "",
     school: "",
+    iso8601: "true",
   });
 
   const onFieldChange = (event: any) => {

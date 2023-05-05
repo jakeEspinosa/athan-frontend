@@ -27,6 +27,11 @@ const MainForm = () => {
     setData({ ...data, ["school"]: option });
   };
 
+  const handleDropdownSelect = (event: any) => {
+    const option = event.target.value;
+    setData({ ...data, ["method"]: option });
+  };
+
   return (
     <>
       <form>
@@ -45,6 +50,7 @@ const MainForm = () => {
               placeholder="Select a calculation method"
               label="Calculation Method"
               options={dropDownOptions}
+              onChange={handleDropdownSelect}
             />
             <RadioButton
               onChange={handleRadioSelect}

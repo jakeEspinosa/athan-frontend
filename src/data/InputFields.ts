@@ -6,7 +6,7 @@ const inputFields = [
     },
     {
       placeholder: "Enter a state or province",
-      label: "State/Province",
+      label: "State",
       helperText: "Please use the full name or abbreviation.",
     },
     {

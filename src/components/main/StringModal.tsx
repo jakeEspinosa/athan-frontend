@@ -36,7 +36,9 @@ const StringModal = ({ bodyText }: Props) => {
 
   return (
     <>
-      <Button onClick={displayString}>Generate</Button>
+      <Button type="submit" onSubmit={displayString}>
+        Generate
+      </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>

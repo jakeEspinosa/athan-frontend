@@ -7,8 +7,10 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useState } from "react";
 
 interface BodyText {
   city: string;
@@ -23,11 +25,15 @@ interface Props {
 }
 
 const StringModal = ({ bodyText }: Props) => {
+  const [isValid, setIsValid] = useState(true);
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const displayString = () => {
     if (Object.values(bodyText).includes("")) {
+      setIsValid(false);
       return;
     }
+    setIsValid(true);
     onOpen();
   };
 
@@ -40,6 +46,7 @@ const StringModal = ({ bodyText }: Props) => {
   return (
     <>
       <Button onClick={displayString}>Generate</Button>
+      {!isValid && <Text>Please fill out all fields!</Text>}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>

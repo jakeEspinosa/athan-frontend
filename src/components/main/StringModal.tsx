@@ -20,11 +20,15 @@ interface BodyText {
 
 interface Props {
   bodyText: BodyText;
+  isButtonDisabled: boolean;
 }
 
-const StringModal = ({ bodyText }: Props) => {
+const StringModal = ({ bodyText, isButtonDisabled }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const displayString = () => {
+    if (isButtonDisabled) {
+      return;
+    }
     onOpen();
   };
 
@@ -36,7 +40,9 @@ const StringModal = ({ bodyText }: Props) => {
 
   return (
     <>
-      <Button onClick={displayString}>Generate</Button>
+      <Button isDisabled={isButtonDisabled} onClick={displayString}>
+        Generate
+      </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>

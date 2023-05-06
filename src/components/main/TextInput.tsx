@@ -18,6 +18,7 @@ const TextInput = ({ placeholder, label, onChange, helperText }: Props) => {
       <FormControl isRequired>
         <FormLabel>{label}</FormLabel>
         <Input
+          key={label.toLowerCase()}
           id={label.toLowerCase()}
           name={label.toLowerCase()}
           placeholder={placeholder}

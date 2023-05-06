@@ -26,7 +26,12 @@ const RadioButton = ({ options, label, onChange }: Props) => {
         <HStack width="100%" justify="center">
           <RadioGroup>
             {options.map((option) => (
-              <Radio margin="9.5px" value={option.value} onChange={onChange}>
+              <Radio
+                margin="9.5px"
+                key={option.value}
+                value={option.value}
+                onChange={onChange}
+              >
                 {option.label}
               </Radio>
             ))}

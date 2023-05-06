@@ -18,7 +18,9 @@ const DropDown = ({ label, placeholder, options, onChange }: Props) => {
       <FormLabel>{label}</FormLabel>
       <Select mb={5} placeholder={placeholder}>
         {options.map((o) => (
-          <option value={o.value}>{o.option} </option>
+          <option key={o.value} value={o.value}>
+            {o.option}
+          </option>
         ))}
       </Select>
     </FormControl>

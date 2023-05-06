@@ -7,24 +7,8 @@ import schoolOptions from "../../data/SchoolOptions";
 import RadioButton from "./RadioButton";
 import StringModal from "./StringModal";
 import { useState } from "react";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-
-const schema = z.object({
-  city: z.string().min(3),
-  state: z.string().min(2).max(30),
-  country: z.string().min(2),
-});
-
-type APIFormData = z.infer<typeof schema>;
 
 const MainForm = () => {
-  const {
-    register,
-    formState: { errors },
-  } = useForm<APIFormData>({ resolver: zodResolver(schema) });
-
   const [data, setData] = useState({
     city: "",
     country: "",
@@ -34,20 +18,9 @@ const MainForm = () => {
     iso8601: "true",
   });
 
-  const [isDisabled, setIsDisabled] = useState(true);
-
   const onFieldChange = (event: any) => {
     const value = event.target.value;
     setData({ ...data, [event.target.id]: value });
-    if (
-      errors.city === null &&
-      errors.country === null &&
-      errors.state === null
-    ) {
-      setIsDisabled(false);
-    }
-    console.log(isDisabled);
-    console.log(errors);
   };
 
   const handleRadioSelect = (event: any) => {
@@ -66,7 +39,6 @@ const MainForm = () => {
         <VStack paddingX="25%" width="full" paddingTop="4%">
           {inputFields.map((field) => (
             <TextInput
-              {...register(field.name)}
               onChange={onFieldChange}
               placeholder={field.placeholder}
               label={field.label}
@@ -86,8 +58,7 @@ const MainForm = () => {
               options={schoolOptions}
             />
           </HStack>
-
-          <StringModal isButtonDisabled={isDisabled} bodyText={data} />
+          <StringModal bodyText={data} />
         </VStack>
       </form>
     </>

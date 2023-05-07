@@ -2,6 +2,7 @@ import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/navbar/NavBar";
 import GlobalStyleContainer from "./components/GlobalStyleContainer";
 import MainForm from "./components/main/MainForm";
+import WarningCard from "./components/mobile/WarningCard";
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
           </GridItem>
         </Show>
         <Show below="lg">
-          <GridItem area="warning warning" bg="red">
-            Warning
+          <GridItem area="warning warning">
+            <WarningCard />
           </GridItem>
         </Show>
       </Grid>
